@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-# Display all active IPv4 IP addresses on the machine
-
-# Use the ip command to show the IP addresses associated with each interface
-# Filter out the IPv4 addresses using grep and awk
-# Format the output as required
-ip -4 addr show | grep -oP '(?<=inet\s)\d+(\.\d+){3}' | while read -r ip; do
-    echo "$ip"
-done | cat -e
